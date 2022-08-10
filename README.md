@@ -2,7 +2,11 @@
 Blog Website Django Template
 
 
-
+- Blog sayfasında paylaşılan postları farklı sayfalarda listeleme
+- Post detay(detail) sayfasıyla ilişkilendirme
+- Arama(search) motorunu çalıştırmak
+- Categori(category) durumuna göre listelemek veya filtrelemek
+- Yorum(comment) yapıldıktan sonra admin olarak onaylamak ve görüntülemek
 
 https://user-images.githubusercontent.com/98836519/183903971-45d680f2-dcab-4f9f-8a30-b10b33a85b86.mp4
 
