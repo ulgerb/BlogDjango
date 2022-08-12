@@ -19,7 +19,17 @@ class CategoryAdmin(admin.ModelAdmin):
         "title",
         "slug",
     )
+
+
+# @admin.register(Comments) # yönetici alanına kaydeder
+class CommentAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Comments
+        
+    def approve_comments(self, request, queryset):
+        queryset.update(active=True)
     
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Comments, CommentAdmin)
 

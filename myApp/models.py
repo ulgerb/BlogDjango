@@ -1,7 +1,5 @@
-from audioop import reverse
 from email.policy import default
 from sre_constants import CATEGORY
-from turtle import title
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -21,6 +19,7 @@ CATEGORI = (
 class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, default="")
+    
     # status = models.CharField(choices=CATEGORY, max_length=20, default=DEFAULT)
     image = models.ImageField(null=True, blank=True, upload_to="category")
 
@@ -43,19 +42,22 @@ class Post(models.Model):
     # year = models.IntegerField(blank=True, null=True)
     # assignments = models.ManyToManyField('Assignment', verbose_name='related assignments', blank=True, null=True)
 
+    
+    
     def __str__(self):
         return self.name
     
     # def __unicode__(self):
     #     return u'%s %s' % (self.forename, self.surname)
 
-    # class Meta:
-    #     verbose_name = ("Post")
-    #     verbose_name_plural = ("Posts")
+    class Meta:
+        ordering = ['-dateshare']
+        
 
+    
 
-    # def get_absolute_url(self):
-    #     return reverse("detail", kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={"pk": self.pk})
 
 class Comments(models.Model):
     post = models.ForeignKey(Post, on_delete= models.CASCADE, related_name='comments')

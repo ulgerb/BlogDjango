@@ -13,6 +13,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body::-webkit-scrollbar {
+	display: block;
+	width: 5px;
+	
+}
+body::-webkit-scrollbar-button {
+}
+body::-webkit-scrollbar-track {
+	background: transparent;
+	height: 120px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgb(106, 106, 106);
+	height: 150px;
+	border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track-piece:end {
+	background: transparent;
+	
+	/*margin-bottom: 10px;*/
+}
+
+body::-webkit-scrollbar-track-piece:start {
+	background: transparent;
+	/*margin-top: 100px;*/
+	height: 100px;
+}
 p {
 	margin-bottom: 0px;
 	font-size: 15px;
@@ -271,12 +300,29 @@ header .navbar {
 }
 .owl-banner {
 	padding-top: 110px;
+	transition: transform 2s ease-out;
+	
 }
+
 
 .owl-banner .item {
 	position: relative;
 	transition: 2s ease-out;
 	overflow: hidden;
+	opacity: 1;
+	animation: trans 1s reverse;
+	margin-top: 0px;
+}
+@keyframes trans {
+	0% {
+		margin-top: 00px;
+		opacity: 1;
+	}
+
+	100% {
+		margin-top: 200px;
+		opacity: 0;
+	}
 }
 .owl-banner .item img {
 	width: 100%;

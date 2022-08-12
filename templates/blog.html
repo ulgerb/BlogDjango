@@ -49,20 +49,22 @@
           <div class="col-lg-8">
             <div class="all-blog-posts">
               <div class="row">
+                {% for post in posts %}
+                
                 <div class="col-lg-6">
                   <div class="blog-post">
                     <div class="blog-thumb">
-                      <img src="{% static 'images/blog-thumb-01.jpg' %}" alt="">
+                      <img src="{{ post.media.url }}" alt="">
                     </div>
                     <div class="down-content">
-                      <span>Lifestyle</span>
-                      <a href="post-details.html"><h4>Donec tincidunt leo</h4></a>
+                      <span>{{ post.name }}</span>
+                      <a href="{% url 'detail' post.id %}"><h4>{{ post.name2 }}</h4></a>
                       <ul class="post-info">
-                        <li><a href="#">Admin</a></li>
-                        <li><a href="#">May 31, 2020</a></li>
+                        <li><a href="#">{{ post.user }}</a></li>
+                        <li><a href="#">{{ post.dateshare }}</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>
-                      <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                      <p>{{ post.textinfo | truncatechars:150 }}</p>
                       <div class="post-options">
                         <div class="row">
                           <div class="col-lg-12">
@@ -77,7 +79,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                {% endfor %}
+
+                <!-- <div class="col-lg-6">
                   <div class="blog-post">
                     <div class="blog-thumb">
                       <img src="{% static 'images/blog-thumb-02.jpg' %}" alt="">
@@ -216,13 +220,31 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
+                
+
+                
+
+                
+                <!-- pages 1-2-3.. -->
                 <div class="col-lg-12">
                   <ul class="page-numbers">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    <li>
+                      {% if posts.has_previous %}
+                      <a href="?page={{ posts.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><<</a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      <span class="current d-flex ">
+                        Sayfa {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                      </span>
+                    </li>
+                    <li class="active">
+                      {% if posts.has_next %}
+                      <a href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">>></a>
+                      {% endif %}
+                    </li>
+                    
                   </ul>
                 </div>
               </div>

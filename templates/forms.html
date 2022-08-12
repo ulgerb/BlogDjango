@@ -1,21 +1,45 @@
-{% extends 'partials/_header.html' %}
 
 {% block forms %}
-    <div class="container" style="margin-top: 15%;">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <h1>Form</h1>
-                    {{form}}
-
-                    <input type="submit" value="Gönder" class="btn btn-danger" style="font-size:14px;">
-                </form>
-            </div>
+    <div class="sidebar-item submit-comment">
+        <div class="sidebar-heading">
+            <h2>Your comment</h2>
+        </div>
+        <div class="content">
+            <form id="comment" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <fieldset>
+                            <input name="name" type="text" id="name" placeholder="Your name" required="">
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <fieldset>
+                            <input name="email" type="text" id="email" placeholder="Your email" required="">
+                        </fieldset>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <fieldset>
+                            <input name="subject" type="text" id="subject" placeholder="Subject">
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <fieldset>
+                            <textarea name="message" rows="6" id="message" placeholder="Type your comment" required=""></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <fieldset>
+                            <button type="submit" id="form-submit" class="main-button">Submit</button>
+                        </fieldset>
+                    </div>
+                </div> -->
+                {{ form }}
+                <button type="submit" id="form-submit" class="main-button" value="Gönder">Submit</button>
+            </form>
         </div>
     </div>
 
 
 {% endblock forms %}
 
-{% extends 'partials/_footer.html' %}
