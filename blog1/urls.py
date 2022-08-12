@@ -22,8 +22,13 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    # path('', indexRecent, name='indexRecent'),
     path('about/', about, name='about'),
     path('blog/', blog, name='blog'),
+    path('blog/<int:pk>', categoryShow, name='category'),
     path('post/<int:pk>', postDetails, name='detail'),
     path('contact/', contact, name='contact'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns += [path('', index,  kwargs={'navbar': 'page1'})]
+# urlpatterns += [path('about/', about,  kwargs={'navbar': 'page2'})]

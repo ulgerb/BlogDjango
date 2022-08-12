@@ -8,8 +8,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="text-content">
-                <h4>Post Details</h4>
-                <h2>Single blog post</h2>
+                <h4>Post Detayları</h4>
+                <h2>Daha fazlası için beğenin!</h2>
               </div>
             </div>
           </div>
@@ -26,8 +26,8 @@
             <div class="main-content">
               <div class="row">
                 <div class="col-lg-8">
-                  <span>Stand Blog HTML5 Template</span>
-                  <h4>Creative HTML Template For Bloggers!</h4>
+                  <span>BLOGWEB</span>
+                  <h4>Aradığın haberler ve kaynaklar burada!</h4>
                 </div>
                 <div class="col-lg-4">
                   <div class="main-button">
@@ -48,7 +48,6 @@
             <div class="all-blog-posts">
               <div class="row">
                 <!-- post -->
-                {% comment %} {% for post in postdetails %} {% endcomment %}
                 
                 
                 <div class="col-lg-12">
@@ -62,7 +61,7 @@
                       <ul class="post-info">
                         <li><a href="#">{{ postdetails.user }}</a></li>
                         <li><a href="#">{{ postdetails.dateshare }}</a></li>
-                        <li><a href="#">10 Comments</a></li>
+                        <li><a href="#">10 Yorum</a></li>
                       </ul>
                       <p>{{ postdetails.textpost }}</p>
                       <div class="post-options">
@@ -70,8 +69,8 @@
                           <div class="col-6">
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">Best Templates</a>,</li>
-                              <li><a href="#">TemplateMo</a></li>
+                              <li><a href="#">Favori</a>,</li>
+                              <li><a href="#">Naturel</a></li>
                             </ul>
                           </div>
                           <div class="col-6">
@@ -86,7 +85,7 @@
                     </div>
                   </div>
                 </div>
-                {% comment %} {% endfor %} {% endcomment %}
+
                 <!-- yorumalar -->
                 <div class="col-lg-12">
                   {% for comment in comments %}
@@ -137,22 +136,24 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item recent-posts">
                     <div class="sidebar-heading">
-                      <h2>Recent Posts</h2>
+                      <h2 style='font-size: 20px !important; color: #f48840;'>Populer Posts</h2>
                     </div>
                     <div class="content">
                       <ul>
-                        <li><a href="post-details.html">
-                          <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
-                          <span>May 31, 2020</span>
-                        </a></li>
-                        <li><a href="post-details.html">
-                          <h5>Suspendisse et metus nec libero ultrices varius eget in risus</h5>
-                          <span>May 28, 2020</span>
-                        </a></li>
-                        <li><a href="post-details.html">
-                          <h5>Swag hella echo park leggings, shaman cornhole ethical coloring</h5>
-                          <span>May 14, 2020</span>
-                        </a></li>
+                        {% for pos in currentpost %}
+                        {% for postal in postsall %}
+                        {% if pos.post.name == postal.name %}
+                        <li>
+                          <a href="{% url 'detail' postal.id %}">
+                            <h5>{{ postal.name2 }}</h5>
+                            <span>{{ postal.dateshare }}</span>
+                          </a>
+                        </li>
+                
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                
                       </ul>
                     </div>
                   </div>
@@ -160,16 +161,15 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item categories">
                     <div class="sidebar-heading">
-                      <h2>Categories</h2>
+                      <h2 style="font-size: 20px !important; color: #f48840;">Categories</h2>
                     </div>
                     <div class="content">
                       <ul>
-                        <li><a href="#">- Nature Lifestyle</a></li>
-                        <li><a href="#">- Awesome Layouts</a></li>
-                        <li><a href="#">- Creative Ideas</a></li>
-                        <li><a href="#">- Responsive Templates</a></li>
-                        <li><a href="#">- HTML5 / CSS3 Templates</a></li>
-                        <li><a href="#">- Creative &amp; Unique</a></li>
+                        {% for cate in category %}
+                
+                        <li><a href="{% url 'category' cate.id %}"> {{ cate.title }} </a></li>
+                
+                        {% endfor %}
                       </ul>
                     </div>
                   </div>
@@ -177,7 +177,7 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item tags">
                     <div class="sidebar-heading">
-                      <h2>Tag Clouds</h2>
+                      <h2>Tags</h2>
                     </div>
                     <div class="content">
                       <ul>

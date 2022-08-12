@@ -26,6 +26,8 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.title
 
+
+
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     media = models.FileField( upload_to='', null=True, blank=True, verbose_name="Blog Resmi")
@@ -34,7 +36,7 @@ class Post(models.Model):
     name2 = models.CharField( max_length=100, verbose_name="Post name2", null=True)
     textinfo = models.TextField(max_length=1000, verbose_name="Text info", null=True)
     textpost = models.TextField(verbose_name="Text post", null=True)
-    dateshare = models.DateTimeField(blank=True, null=True, verbose_name="Share Date")
+    dateshare = models.DateTimeField(blank=True, null=True, verbose_name="Share Date", auto_now_add=True)
     # categori = models.CharField(max_length=20, choices = CATEGORI, default = DEFAULT)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True) # categoriyle ilişki kuruldu
     # class_group = models.CharField(max_length=30, blank=True, null=True)
@@ -52,12 +54,17 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-dateshare']
-        
-
-    
 
     def get_absolute_url(self):
         return reverse("detail", kwargs={"pk": self.pk})
+
+
+class CurrentPost(models.Model):
+    post = models.ForeignKey(Post, verbose_name=("Popüler Post"), on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return self.post.name
+    
 
 class Comments(models.Model):
     post = models.ForeignKey(Post, on_delete= models.CASCADE, related_name='comments')

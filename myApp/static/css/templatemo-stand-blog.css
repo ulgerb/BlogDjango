@@ -60,6 +60,7 @@ ul {
 
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
+	text-transform: capitalize ;
 }
 
 .main-button a {
@@ -69,7 +70,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 13px;
 	font-weight: 500;
 	padding: 12px 20px;
-	text-transform: uppercase;
+	
 	transition: all .3s;
 }
 
@@ -94,7 +95,7 @@ h1,h2,h3,h4,h5,h6 {
 .page-heading .text-content h4 {
 	color: #f48840;
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	margin-bottom: 15px;
@@ -104,7 +105,7 @@ h1,h2,h3,h4,h5,h6 {
 	color: #fff;
 	font-size: 36px;
 	font-weight: 700;
-	text-transform: uppercase;
+	
 	letter-spacing: 0.5px;
 }
 
@@ -232,7 +233,7 @@ header .navbar {
 }
 .navbar .navbar-brand h2 {
 	color: #1e1e1e;
-	text-transform: uppercase;
+	
 	font-size: 24px;
 	font-weight: 900;
 	-webkit-transition: all .3s ease 0s;
@@ -258,7 +259,7 @@ header .navbar {
 	text-transform: capitalize;
 	font-size: 15px;
 	font-weight: 800;
-	text-transform: uppercase;
+	
 	letter-spacing: 0.5px;
 	color: #1e1e1e;
 	transition: all 0.3s;
@@ -344,7 +345,7 @@ header .navbar {
 .owl-banner .item .item-content .meta-category span {
 	color: #f48840;
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	font-weight: 900;
 	letter-spacing: 0.25px;
 }
@@ -477,7 +478,7 @@ header .navbar {
 
 .blog-posts .down-content span {
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	letter-spacing: 0.5px;
 	font-weight: 900;
 	color: #f48840;
@@ -613,7 +614,7 @@ ul.page-numbers li a:hover {
 
 .blog-posts .sidebar-heading h2 {
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	color: #20232e;
@@ -681,7 +682,7 @@ ul.page-numbers li a:hover {
 	height: 46px;
 	border: 1px solid #eee;
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	font-weight: 500;
 	color: #7a7a7a;
 	outline: none;
@@ -694,7 +695,7 @@ ul.page-numbers li a:hover {
 	height: 46px;
 	border: 1px solid #eee;
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	font-weight: 500;
 	color: #7a7a7a;
 	outline: none;
@@ -718,7 +719,7 @@ ul.page-numbers li a:hover {
 	font-size: 13px;
 	font-weight: 500;
 	padding: 12px 20px;
-	text-transform: uppercase;
+	
 	transition: all .3s;
 	border: none;
 	outline: none;
@@ -744,7 +745,7 @@ ul.page-numbers li a:hover {
 
 .sidebar .sidebar-heading h2 {
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	color: #20232e;
@@ -758,7 +759,7 @@ ul.page-numbers li a:hover {
 	height: 50px;
 	border: 1px solid #eee;
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	font-weight: 500;
 	color: #7a7a7a;
 	outline: none;
@@ -881,7 +882,7 @@ footer ul.social-icons li:last-child::after {
 
 footer ul.social-icons li a {
 	font-size: 14px;
-	text-transform: uppercase;
+	
 	color: #fff;
 	font-weight: 500;
 	letter-spacing: 0.25px;
@@ -894,7 +895,7 @@ footer ul.social-icons li a:hover {
 
 footer p {
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	color: #fff;
 }
 
@@ -916,7 +917,7 @@ footer p a:hover {
 
 .contact-us .sidebar-heading h2 {
 	font-size: 18px;
-	text-transform: uppercase;
+	
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	color: #20232e;
@@ -930,7 +931,7 @@ footer p a:hover {
 	height: 46px;
 	border: 1px solid #eee;
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	font-weight: 500;
 	color: #7a7a7a;
 	outline: none;
@@ -943,7 +944,7 @@ footer p a:hover {
 	height: 46px;
 	border: 1px solid #eee;
 	font-size: 13px;
-	text-transform: uppercase;
+	
 	font-weight: 500;
 	color: #7a7a7a;
 	outline: none;
@@ -967,7 +968,7 @@ footer p a:hover {
 	font-size: 13px;
 	font-weight: 500;
 	padding: 12px 20px;
-	text-transform: uppercase;
+	
 	transition: all .3s;
 	border: none;
 	outline: none;
