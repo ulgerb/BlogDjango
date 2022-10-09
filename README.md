@@ -11,7 +11,7 @@
 > - [x] Header'daki başlıklara 'class = active' özelliğini django ile kazandırmak
 
 ---
-
+    burası kodlama alanı
 - Post detay(detail) sayfasıyla ilişkilendirme
 - Postları sayfalara bölmek
 
