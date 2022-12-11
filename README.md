@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/98836519/183903971-45d680f2-dcab-4f9f-
 
 https://user-images.githubusercontent.com/98836519/184338115-9ce1bea9-dd59-4744-ba86-28a3fe69d63f.mp4
 
----
+
 
 - Categori(category) durumuna göre listelemek veya filtrelemek
 - Populer post, istenilen postu öne çıkarmak
